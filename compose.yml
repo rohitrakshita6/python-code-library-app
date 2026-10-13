@@ -3,6 +3,7 @@ services:
   db:
     container_name: db
     build: ./database/
+    image: myrepo-db
     ports:
       - "3306:3306"
     volumes:
@@ -20,6 +21,7 @@ services:
 
   auth_service:
     container_name: auth_service
+    image: myrepo-auth_service
     build: ./auth/
     ports:
       - "5001:5001"
@@ -35,6 +37,7 @@ services:
           memory: 200M
   book_service:
     container_name: book_service
+    image: myrepo-book_service
     build: ./book/
     ports:
       - "5002:5002"
@@ -50,6 +53,7 @@ services:
           memory: 200M
   borrow_service:
     container_name: borrow_service
+    image: myrepo-borrow_service
     build: ./borrow/
     ports:
       - "5003:5003"
@@ -65,6 +69,7 @@ services:
           memory: 200M
   frontend:
     container_name: frontend
+    image: myrepo-frontend
     build: ./
     ports:
       - "5000:5000"
